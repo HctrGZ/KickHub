@@ -1,64 +1,50 @@
-<!DOCTYPE html>
-<html>
+<div class="conteiner">
 
-<head>
-    <title>Inicio</title>
+<!--   <header id="titulo">
+    <button class="openbtn" onclick="openNav()">
+        <h4>&#9776; Menu</h4>
+    </button>
+    <a href="#">
+        <h1>KickHub</h1>
+    </a>
+</header> -->
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Permanent+Marker&display=swap" rel="stylesheet">
+<!-- Side bar 
+<div id="mySidepanel" class="sidepanel">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <?php
+    if (isset($_SESSION['user'])) {
+    ?>
+        <h2>Bienvenido <?php echo $username ?></h2>
+    <?php
+    }
+    ?>
+    
+    <a href="Gallery.php">Shop Now</a>
+    <a href="#">Post</a>
+    <a href="mailto: hola@gmail.com">Contact</a>
+    <?php
+    if (isset($_SESSION['user'])) {
+    ?>
+        <a href="./logica/logout.php">Log Out</a>
+    <?php
+    }
+    ?>
+    <?php
+    if (!isset($_SESSION['user'])) {
+    ?>
+        <a href="./login.php">Log In</a>
+    <?php
+    }
+    ?>
+    
+</div> -->
 
-</head>
+<!--  -->
 
-<body>
-    <header id="titulo">
-        <button class="openbtn" onclick="openNav()">
-            <h4>&#9776; Menu</h4>
-        </button>
-        <a href="#">
-            <h1>KickHub</h1>
-        </a>
-    </header>
 
-    <!-- Side bar 
-    <div id="mySidepanel" class="sidepanel">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <?php
-        if (isset($_SESSION['user'])) {
-        ?>
-            <h2>Bienvenido <?php echo $username ?></h2>
-        <?php
-        }
-        ?>
-        
-        <a href="Gallery.php">Shop Now</a>
-        <a href="#">Post</a>
-        <a href="mailto: hola@gmail.com">Contact</a>
-        <?php
-        if (isset($_SESSION['user'])) {
-        ?>
-            <a href="./logica/logout.php">Log Out</a>
-        <?php
-        }
-        ?>
-        <?php
-        if (!isset($_SESSION['user'])) {
-        ?>
-            <a href="./login.php">Log In</a>
-        <?php
-        }
-        ?>
-        
-    </div>
-  -->
-    <!--  -->
 
-   
-</body>
-
-</html>
 
 <app-home></app-home>
+</div>
+
