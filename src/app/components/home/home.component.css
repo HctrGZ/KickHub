@@ -1,0 +1,217 @@
+html {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-optical-sizing: auto;
+    font-weight: 100px;
+    font-style: normal;
+  }
+  
+  .body_home{
+      margin:0;
+      background-color: #30293B;
+  }
+
+  h1{
+    font-family: "Permanent Marker", cursive;
+  }
+  
+  header{
+    font-family: "Permanent Marker", cursive;
+    height: 10rem;
+    display: flex;   
+    position: sticky;
+    left:20px;
+    top: 0px;
+    background-color: #110b19;
+    color: white;
+    padding: 0.1rem; /* Medidas relativas dependiento del tamaño de la fuente html */
+    margin: 0;
+    z-index: 1;
+  }
+
+  header a{
+    transition: color 0.3s ease;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 0rem;
+    flex-grow: 1;
+  }
+  
+  header h1{
+    transition: color 0.3s ease;
+    font-size: 3.5rem;
+    flex-grow: 1;
+    padding-right: 30rem;
+  }
+
+  header h1:hover{
+    color: #9078B5;
+    cursor: pointer;
+  }
+
+  header h4{
+    transition: color 0.3s ease;
+    font-size: 1.5rem;
+
+  }
+
+  header h4:hover{
+    color: #9078B5;
+    cursor: pointer;
+  }
+
+  .carbtn {
+    font-family: "Permanent Marker", cursive;
+    font-size: 20px;
+    cursor: pointer;
+    width: 30rem;
+    background-color: #110b19;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+
+  .conteiner{
+    margin:0;
+    height: 800px;
+    background-color: black !important; 
+    /*background-image: url('imagenes/fondo.jpg');*/
+    background-position: center;
+    background-size: cover;
+  }
+
+  .conteiner h1{
+    font-size: 70px;
+    margin: 0;
+    padding: 6rem 6rem 1rem;
+  }
+
+  .conteiner p{
+    font-size: 30px;
+    margin: 0;
+    padding: 6rem 6rem;
+    padding-top: 1rem;
+  }
+
+  .button{
+    transition: background-color 0.3s ease;
+    font-size: 26px;
+    text-decoration: none;
+    border-width: 2px; 
+    border-style: solid; 
+    background-color: transparent; 
+    color: rgb(255, 255, 255); 
+    border-radius: 12px; 
+    border-color: rgb(255, 255, 255);
+    margin: 6rem;
+    padding: 10px;
+  }
+
+  .button:hover{
+    background-color: rgb(255, 255, 255);
+    color: #110b19;
+    border-color: #110b19;
+  }
+
+  .button:visited{
+    background-color: transparent; 
+    border-color: rgb(255, 255, 255); 
+  }
+
+
+  section{
+    display: flexbox;
+    color: white;
+  }
+
+  .info{
+    display: flex;
+
+  }
+
+  .infotext{
+    font-size: 25px;
+    padding: 6rem;
+    padding-right: 0;
+  }
+
+  .infotext h1{
+    font-size: 50px;
+    padding-bottom: 3rem;
+  }
+
+  .infovid{
+    padding: 6rem;
+
+  }
+
+  .services{
+    display: flex;
+    margin: 0rem 6rem;
+    justify-content: space-between;
+  }
+
+  #servicesID{
+    color: white;
+    padding: 1rem 6rem 1rem;
+    font-size: 25px;
+  }
+
+  .typeService{
+    color: #ffffff;
+    font-size: 22px;;
+    overflow: hidden;
+    background-color: transparent;
+    margin: 1rem 0;
+    border-radius: 0.7rem;
+    width: 25%;
+    padding-bottom: 4rem;
+  }
+
+  .typeService h2{
+    font-family: "Permanent Marker", cursive;
+  }
+
+  .last{
+    text-align: center;
+    /*background-image: url('imagenes/collage.jpg');*/
+    color: white;
+    padding: 10rem;
+    margin:0;
+    height: 200px;
+    background-color: black; 
+    background-position: center;
+    background-size: cover;
+  }
+
+  .last p{
+    padding-bottom: 4rem;
+    font-size: 22px;
+  }
+
+  footer{
+    background-color: #222;
+    padding: 3rem;
+    color: white;
+}
+
+footer section{
+    float: right;
+}
+
+footer p{ /* quitar margen extra de p */
+    margin: 0;
+}
+
+footer a{
+    transition: color 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: cornflowerblue;
+}
