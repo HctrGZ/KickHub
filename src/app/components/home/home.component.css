@@ -10,58 +10,13 @@ html {
   .body_home{
       margin:0;
       background-color: #30293B;
+      font-family: "Montserrat", sans-serif;
   }
 
-  h1{
+  h1,h2{
     font-family: "Permanent Marker", cursive;
   }
   
-  header{
-    font-family: "Permanent Marker", cursive;
-    height: 10rem;
-    display: flex;   
-    position: sticky;
-    left:20px;
-    top: 0px;
-    background-color: #110b19;
-    color: white;
-    padding: 0.1rem; /* Medidas relativas dependiento del tamaño de la fuente html */
-    margin: 0;
-    z-index: 1;
-  }
-
-  header a{
-    transition: color 0.3s ease;
-    font-size: 1.5rem;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    padding: 0rem;
-    flex-grow: 1;
-  }
-  
-  header h1{
-    transition: color 0.3s ease;
-    font-size: 3.5rem;
-    flex-grow: 1;
-    padding-right: 30rem;
-  }
-
-  header h1:hover{
-    color: #9078B5;
-    cursor: pointer;
-  }
-
-  header h4{
-    transition: color 0.3s ease;
-    font-size: 1.5rem;
-
-  }
-
-  header h4:hover{
-    color: #9078B5;
-    cursor: pointer;
-  }
 
   .carbtn {
     font-family: "Permanent Marker", cursive;
@@ -97,12 +52,12 @@ html {
   }
 
   .button{
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease ; 
     font-size: 26px;
     text-decoration: none;
     border-width: 2px; 
     border-style: solid; 
-    background-color: transparent; 
+    background-color: transparent ; 
     color: rgb(255, 255, 255); 
     border-radius: 12px; 
     border-color: rgb(255, 255, 255);
@@ -110,15 +65,16 @@ html {
     padding: 10px;
   }
 
+
   .button:hover{
-    background-color: rgb(255, 255, 255);
-    color: #110b19;
-    border-color: #110b19;
+    background-color: rgb(255, 255, 255) !important;
+    color: #110b19 !important;
+    border-color: #110b19 !important;
   }
 
   .button:visited{
-    background-color: transparent; 
-    border-color: rgb(255, 255, 255); 
+    background-color: transparent !important; 
+    border-color: rgb(255, 255, 255) !important; 
   }
 
 
@@ -171,9 +127,6 @@ html {
     padding-bottom: 4rem;
   }
 
-  .typeService h2{
-    font-family: "Permanent Marker", cursive;
-  }
 
   .last{
     text-align: center;
@@ -181,10 +134,10 @@ html {
     color: white;
     padding: 10rem;
     margin:0;
-    height: 200px;
     background-color: black; 
     background-position: center;
     background-size: cover;
+    
   }
 
   .last p{
@@ -192,26 +145,3 @@ html {
     font-size: 22px;
   }
 
-  footer{
-    background-color: #222;
-    padding: 3rem;
-    color: white;
-}
-
-footer section{
-    float: right;
-}
-
-footer p{ /* quitar margen extra de p */
-    margin: 0;
-}
-
-footer a{
-    transition: color 0.3s ease;
-    color: white;
-    text-decoration: none;
-}
-
-footer a:hover{
-    color: cornflowerblue;
-}

@@ -1,3 +1,5 @@
+<app-header1></app-header1>
+
 <div class="body_home">
     <section class="conteiner">
         <div>
@@ -5,16 +7,18 @@
             <p>Dive into KickHub for limited edition sneakers and streetwear<br>
                 <b>Don't miss out!!!</b>
             </p>
-            <a href="Gallery.php" class="button" target="_self">Shop Now</a>
+            <a  class="button" [routerLink]="['/gallery']" >Shop Now</a>
         </div>
     </section>
-    
+
     <section class="info">
         <div class="infotext">
             <h1>Upgrade your sneakers game with KickHub</h1>
             <p>
-                Discover the ultimate online store for sneaker enthusiasts at KicksHub. Based in San Luis Potosí City, SLP,
-                we offer a wide range of premium sneakers that will elevate your style. From iconic classics to the latest
+                Discover the ultimate online store for sneaker enthusiasts at KicksHub. Based in San Luis Potosí City,
+                SLP,
+                we offer a wide range of premium sneakers that will elevate your style. From iconic classics to the
+                latest
                 releases, KicksHub is your go-to destination for all things sneakers.
             </p>
         </div>
@@ -25,42 +29,36 @@
             </video>
         </div>
     </section>
-    
+
     <div id="servicesID">
         <h1>Services</h1>
     </div>
     <section class="services">
         <div class="typeService">
-            <img src="" width="350" height="350">
+            <img src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" width="350" height="350">
             <h2>FAST DELIVERY OPTIONS</h2>
             <p>Choose from various shipping options for quick and reliable delivery of your orders.</p>
         </div>
         <div class="typeService">
-            <img src="" width="350" height="350">
+            <img src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" width="350" height="350">
             <h2>24/7 CUSTOMER SUPPORT</h2>
             <p>Get assistance anytime, day or night, with our dedicated customer service team.</p>
         </div>
         <div class="typeService">
-            <img src="" width="350" height="350">
+            <img src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" width="350" height="350">
             <h2>SECURE PAYMENT METHODS</h2>
             <p>Shop with confidence using our secure payment gateways and protect your financial information.</p>
         </div>
     </section>
-    
+
     <section class="last">
         <div>
             <p>Shop the lastest collection of sneaker at KicksHub and step up your style game</p>
-            <a href="Gallery.php" class="button" target="_self">Shop Now</a>
+            <a class="button" [routerLink]="['/gallery']" >Shop Now</a>
         </div>
     </section>
-    
-    
-    <footer>
-        <section>
-            <a href="mailto: hola@gmail.com">Contacto</a>
-        </section>
-        <p>Copyright 2024</p>
-    </footer>
+
+    <app-footer></app-footer>
+
+
 </div>
-
-

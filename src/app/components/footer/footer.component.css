@@ -1,0 +1,23 @@
+footer{
+    background-color: #222;
+    padding: 3rem;
+    color: white;
+}
+
+footer section{
+    float: right;
+}
+
+footer p{ /* quitar margen extra de p */
+    margin: 0;
+}
+
+footer a{
+    transition: color 0.3s ease;
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover{
+    color: cornflowerblue;
+}

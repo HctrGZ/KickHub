@@ -1,0 +1,57 @@
+.header1{
+    font-family: "Permanent Marker", cursive;
+    height: 10rem;
+    display: flex;   
+    position: sticky;
+    left:20px;
+    top: 0px;
+    background-color: #110b19;
+    color: white;
+    padding: 0.1rem; /* Medidas relativas dependiento del tamaño de la fuente html */
+    margin: 0;
+    z-index: 1;
+  }
+
+  .header1 a{
+    transition: color 0.3s ease;
+    font-size: 1.5rem;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    padding: 0rem;
+    flex-grow: 1;
+  }
+  
+  .header1 h1{
+    transition: color 0.3s ease;
+    font-size: 3.5rem;
+    flex-grow: 1;
+    padding-right: 30rem;
+  }
+
+  .header1 h1:hover{
+    color: #9078B5;
+    cursor: pointer;
+  }
+
+  .header1 h4{
+    transition: color 0.3s ease;
+    font-size: 1.5rem;
+
+  }
+
+  .header1 h4:hover{
+    color: #9078B5;
+    cursor: pointer;
+  }
+
+  .openbtn {
+    font-family: "Permanent Marker", cursive;
+    font-size: 20px;
+    cursor: pointer;
+    width: 30rem;
+    background-color: #110b19;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
