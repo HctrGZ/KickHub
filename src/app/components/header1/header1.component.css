@@ -26,7 +26,6 @@
     transition: color 0.3s ease;
     font-size: 3.5rem;
     flex-grow: 1;
-    padding-right: 30rem;
   }
 
   .header1 h1:hover{
@@ -46,6 +45,17 @@
   }
 
   .openbtn {
+    font-family: "Permanent Marker", cursive;
+    font-size: 20px;
+    cursor: pointer;
+    width: 30rem;
+    background-color: #110b19;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+  }
+
+  .carbtn{
     font-family: "Permanent Marker", cursive;
     font-size: 20px;
     cursor: pointer;

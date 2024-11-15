@@ -1,9 +1,8 @@
-.grid1 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual ancho */
-    gap: 1rem; /* Espaciado entre los elementos */
-  }
-  
-
+.container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);  
+  gap: 2rem;
+  margin: 3rem;
+}
 
   

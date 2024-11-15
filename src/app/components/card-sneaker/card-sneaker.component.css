@@ -1,0 +1,57 @@
+.tenisBox{
+    box-shadow: 0 0.1rem 0.4rem  rgba(0, 0, 0, 0.05);;
+    transition: box-shadow 0.3s ease;
+    overflow: hidden;
+    background-color: white;
+    margin: 1rem 0;
+    border-radius: 0.7rem;
+    position: relative;
+    cursor: pointer;
+    height: 450px;
+    
+}
+
+.tenisBox:hover{
+    box-shadow: 0 0.1rem 0.4rem  rgba(0, 0, 0, 0.3);/* Sombra a la derecha, hacia abajo y difuminación */
+}
+
+.tenisBox h2 , .tenisBox p{
+    margin: 1rem;
+    text-align: center;
+}
+
+/* Boton dentro de la imagen */
+.tenisBox .btn {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #555;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  /* Para que aparezca oculto y se pueda hacer la transición */
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
+}
+
+.tenisBox .btn:hover {
+  background-color: black;
+}
+
+.tenisBox:hover > .btn{
+  display:block;
+  transition: .5s ease;
+}
+/* Para que aparezca el boton */
+.tenisBox:hover .btn{
+    opacity:1;
+}
+
+.img-item{
+    padding: 1rem;
+}
