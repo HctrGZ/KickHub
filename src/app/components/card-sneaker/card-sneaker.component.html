@@ -1,13 +1,14 @@
+<!-- Card -->
 <div class="tenisBox">
     <img class="img-item"
-        src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQH_NhwvXXz4-mXMT-4kIJvbshPtxOBdOgxZMg9zDEt1ZQKYhdNv8Haw3vTWjuAbmhMdiOJ1lirJRHWclYskXoIB-p4GIl6prmDj7PoXb9BNlOPmr02XU299w&usqp=CAE"
+        src="{{sneaker.image}}"
         alt="imagen" width="350" height="350">
     <button class="btn" (click)="openModal()"> Comprar </button>
-    <h2>Tenis Nike</h2>
+    <h2>{{sneaker.name}}</h2>
     <p>Precio</p>
 </div>
 
-
+<!-- Modal -->
 <div id="myModal" class="modal" [ngClass]="{ 'modal-visible': isModalVisible }">
 
   <div class="modal-content">
@@ -16,12 +17,13 @@
     <div class="card flex">
         <p>
             <img class="img-item"
-            src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQH_NhwvXXz4-mXMT-4kIJvbshPtxOBdOgxZMg9zDEt1ZQKYhdNv8Haw3vTWjuAbmhMdiOJ1lirJRHWclYskXoIB-p4GIl6prmDj7PoXb9BNlOPmr02XU299w&usqp=CAE"
+            src="{{sneaker.image}}"
             alt="imagen" width="350" height="350">
         </p>
         <p-divider layout="vertical" />
         <p>
-            Info del tenis y precio
+            {{sneaker.name}}
+            {{sneaker.description}}
         </p>
         <p>
             <button>comprar</button>
