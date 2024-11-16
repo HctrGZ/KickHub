@@ -1,32 +1,29 @@
-<!-- <p-card header="Advanced Card" subheader="Card Subheader" [style]="{ width: '360px' }">
-    <ng-template pTemplate="header">
-        <img alt="Card" src="https://primefaces.org/cdn/primeng/images/card-ng.jpg" />
-    </ng-template>
-    <p>
-        Lorem ipsum dolor sit amet...
-    </p>
-    <ng-template pTemplate="footer">
-        <div class="flex gap-3 mt-1">
-            <p-button label="Cancel" severity="secondary" class="w-full" styleClass="w-full" />
-            <p-button label="Save" class="w-full" styleClass="w-full" />
-        </div>
-    </ng-template>
-  </p-card> -->
-
-  <div class="tenisBox">
-    <img class="img-item" src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQH_NhwvXXz4-mXMT-4kIJvbshPtxOBdOgxZMg9zDEt1ZQKYhdNv8Haw3vTWjuAbmhMdiOJ1lirJRHWclYskXoIB-p4GIl6prmDj7PoXb9BNlOPmr02XU299w&usqp=CAE" alt="imagen" width="350" height="350">
-    <button class="btn">Comprar</button>
-    <!-- Modal correspondiente al elemento actual -->
-    <!-- <div id="myModal<?php echo $contador ?>" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2 class="titulo-item"></h2>
-            <p class="modelo-item"></p>
-            <p class="precio-item"></p>
-            <p class="talla-item"></p>
-            <button class="boton-item">Add to cart</button>
-        </div>
-    </div> -->
+<div class="tenisBox">
+    <img class="img-item"
+        src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQH_NhwvXXz4-mXMT-4kIJvbshPtxOBdOgxZMg9zDEt1ZQKYhdNv8Haw3vTWjuAbmhMdiOJ1lirJRHWclYskXoIB-p4GIl6prmDj7PoXb9BNlOPmr02XU299w&usqp=CAE"
+        alt="imagen" width="350" height="350">
+    <button class="btn" (click)="openModal()"> Comprar </button>
     <h2>Tenis Nike</h2>
     <p>Precio</p>
+</div>
+
+
+<div id="myModal" class="modal" [ngClass]="{ 'modal-visible': isModalVisible }">
+
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    
+    <p>Some text in the Modal..</p>
+  </div>
+</div>
+
+<div class="card flex justify-content-center">
+    <p-sidebar [(visible)]="sidebarVisible">
+        <h3>Sidebar</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+    </p-sidebar>
+    <p-button (onClick)="sidebarVisible = true" icon="pi pi-arrow-right" />
 </div>
