@@ -13,17 +13,24 @@
   <div class="modal-content">
     <span class="close" (click)="closeModal()">&times;</span>
     
-    <p>Some text in the Modal..</p>
+    <div class="card flex">
+        <p>
+            <img class="img-item"
+            src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQH_NhwvXXz4-mXMT-4kIJvbshPtxOBdOgxZMg9zDEt1ZQKYhdNv8Haw3vTWjuAbmhMdiOJ1lirJRHWclYskXoIB-p4GIl6prmDj7PoXb9BNlOPmr02XU299w&usqp=CAE"
+            alt="imagen" width="350" height="350">
+        </p>
+        <p-divider layout="vertical" />
+        <p>
+            Info del tenis y precio
+        </p>
+        <p>
+            <button>comprar</button>
+        </p>
+        
+    </div>
   </div>
 </div>
 
-<div class="card flex justify-content-center">
-    <p-sidebar [(visible)]="sidebarVisible">
-        <h3>Sidebar</h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-    </p-sidebar>
-    <p-button (onClick)="sidebarVisible = true" icon="pi pi-arrow-right" />
-</div>
+
+
+

@@ -87,7 +87,7 @@
     padding: 20px;
     border: 1px solid #888;
     width: 80%; 
-    max-width: 500px;
+    max-width: 1000px;
   }
   
   /* El botón de cerrar */
@@ -108,5 +108,9 @@
   /* Clase para hacer visible el modal */
   .modal-visible {
     display: block; /* Muestra el modal */
+  }
+  
+  .p-sidebar {
+    z-index: 1000 !important; /* Asegúrate de que el sidebar esté sobre otros elementos */
   }
   

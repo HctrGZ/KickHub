@@ -44,18 +44,7 @@
     cursor: pointer;
   }
 
-  .openbtn {
-    font-family: "Permanent Marker", cursive;
-    font-size: 20px;
-    cursor: pointer;
-    width: 30rem;
-    background-color: #110b19;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-  }
-
-  .carbtn{
+  .btnHeader{
     font-family: "Permanent Marker", cursive;
     font-size: 20px;
     cursor: pointer;

@@ -1,11 +1,20 @@
 <div class="header1" id="titulo">
-    <button class="openbtn" onclick="openNav()">
-        <h4>&#9776; Menu</h4>
-    </button>
+    <button class="btnHeader" (click)="sidebarVisible = true">
+        <h4>&#9776; Menu </h4>
+        <p-sidebar [(visible)]="sidebarVisible" [baseZIndex]="100000">
+            <h3>Bienvenido --USERNAME--</h3>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+        </p-sidebar>
+    </button> 
+
     <a href="#">
         <h1>KickHub</h1>
     </a>
-    <button class="carbtn" onclick="openCar()">
+    
+    <button class="btnHeader" onclick="openCar()">
         <h4>&#9776; Carrito</h4>
     </button>
 </div>
+

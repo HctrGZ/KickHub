@@ -5,11 +5,13 @@ import { Sneakers } from '../../interfaces/sneakers';
 import { DialogModule } from 'primeng/dialog';
 import { NgClass } from '@angular/common';
 import { SidebarModule } from 'primeng/sidebar';
+import { DividerModule } from 'primeng/divider';
+
 
 @Component({
   selector: 'app-card-sneaker',
   standalone: true,
-  imports: [CardModule, ButtonModule, DialogModule,NgClass, SidebarModule],
+  imports: [CardModule, ButtonModule, DialogModule,NgClass, SidebarModule,DividerModule],
   templateUrl: './card-sneaker.component.html',
   styleUrl: './card-sneaker.component.css'
 })
@@ -23,11 +25,13 @@ export class CardSneakerComponent {
     size: 0
   };
 
-  sidebarVisible: boolean = false;
-  constructor(private cd: ChangeDetectorRef) { } 
-  showDialog() { this.visible = true; this.cd.detectChanges(); }
   visible: boolean = false;
 
+    showDialog() {  
+        this.visible = true;
+    }
+
+  sidebarVisible: boolean = false;
   isModalVisible: boolean = false;
 
   // Método para abrir el modal

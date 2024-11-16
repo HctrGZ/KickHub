@@ -6,4 +6,10 @@
   overflow: visible;
 }
 
-  
+h1, h2{
+  font-family: "Permanent Marker", cursive;
+}
+
+.h1sneaker{
+  margin-left: 3rem
+}
