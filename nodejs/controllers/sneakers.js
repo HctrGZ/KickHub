@@ -36,15 +36,42 @@ const getSneakerById = async (req = request, res = response) => {
   }
 };
 
-const createNewSneaker = (req = request, res = response) =>{
-    res.json({
-        msg: "sneaker - POST - /",
-        result : 12345
-    });
+const createNewSneaker = async (req = request, res = response) =>{
+
+    const {name, year, episodes, image, description, genre} = req.body;
+    const sneakerData = {name, year, episodes, image, description, genre};
+
+    if(!name || !year || !episodes || !image || !description || !genre){
+        return res.status(400).json({
+            msg: "Información incompleta"
+        })
+    }
+
+    try{
+        const savedSneaker = await sneakerRepository.create(sneakerData);
+            res.status(201).json(
+                savedSneaker
+            )
+    }catch(error){
+        console.log(500);
+        res.status(500).json({
+            msg: "Error al agregar nuevo elemento"
+        })
+    }
+}
+
+const updateSneaker = async (req= request, res = response) =>{
+
+}
+
+const deleteSneaker = async (req= request, res = response) =>{
+    
 }
 
 module.exports={
     getAllSneakers,
     createNewSneaker,
-    getSneakerById
+    getSneakerById,
+    updateSneaker,
+    deleteSneaker
 }

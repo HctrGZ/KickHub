@@ -18,6 +18,25 @@ class sneakerRepository{
             throw error;
         }
     }
+
+    static async create(sneakerData){
+        const Sneaker = new sneaker(sneakerData);
+        return await Sneaker.save();
+    }
+
+    static async deleteById(id){
+        if(!ObjectId.isValid(id)){
+            return null;
+        }
+        return await sneaker.deleteOne({_id: id});
+    }
+
+    static async updateById(id, updateData){
+        if(!ObjectId.isValid(id)){
+            return null;
+        }
+        return await sneaker.updateOne({_id: id}, updateData);
+    }
 }
 
 module.exports = { sneakerRepository }

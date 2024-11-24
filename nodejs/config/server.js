@@ -14,6 +14,7 @@ class Server{
 
         this.usersPath = "/api/users"
         this.sneakersPath = "/api/sneakers"
+        this.authPath = "/api/auth"
 
         
         this.middlewares()
@@ -24,6 +25,7 @@ class Server{
     routes(){
         this.app.use(this.sneakersPath, require ("../routes/sneakers"));
         this.app.use(this.usersPath, require ("../routes/users"));
+        this.app.use(this.authPath, require ("../routes/auth"));
 
         this.app.get("*", function(req, res){
             res.status(404).json({
@@ -43,6 +45,8 @@ class Server{
             /* objeto** origen que va a poder haer uso de los recursos */
             this.corsOptions
         ));
+
+        this.app.use(express.json());
     }
 
     listen(){

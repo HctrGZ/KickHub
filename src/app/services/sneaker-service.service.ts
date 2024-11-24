@@ -10,8 +10,8 @@ export class SneakerServiceService {
   constructor() { }
 
   private http = inject(HttpClient);
-  private apiUrl = "https://my-json-server.typicode.com/jagova/tvshows-demo-db/tvshows";
-  //private apiUrl = "http://localhost:8080/api/tvshows"
+  //private apiUrl = "https://my-json-server.typicode.com/jagova/tvshows-demo-db/tvshows";
+  private apiUrl = "http://localhost:8080/api/sneakers"
   private _sneakers: Sneakers[] = [];
 
   public fetchSneakers(){

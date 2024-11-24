@@ -10,4 +10,4 @@ const sneakersSchema = mongoose.Schema({
     likes: [String] 
 });
 
-module.exports = mongoose.model("tvshow", sneakersSchema);
+module.exports = mongoose.model("sneakers", sneakersSchema);
