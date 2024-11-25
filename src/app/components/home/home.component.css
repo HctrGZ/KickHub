@@ -33,7 +33,7 @@ html {
     margin:0;
     height: 800px;
     background-color: black !important; 
-    /*background-image: url('imagenes/fondo.jpg');*/
+    background-image: url('/images/fondo.jpg');
     background-position: center;
     background-size: cover;
   }
@@ -101,7 +101,7 @@ html {
 
   .infovid{
     padding: 6rem;
-
+    
   }
 
   .services{
@@ -130,7 +130,7 @@ html {
 
   .last{
     text-align: center;
-    /*background-image: url('imagenes/collage.jpg');*/
+    background-image: url('/images/collage.jpg');
     color: white;
     padding: 10rem;
     margin:0;

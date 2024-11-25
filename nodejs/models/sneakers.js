@@ -1,13 +1,11 @@
 const mongoose = require("mongoose");
 
 const sneakersSchema = mongoose.Schema({
-    name: String,
-    year: Number,
-    episodes: Number,
-    image: String, 
+    brandName: String, 
     description: String,
-    genre: String,
-    likes: [String] 
-});
-
+    image: String,
+    price: Number,
+    color: String,
+    sizeRange: [Number]
+})
 module.exports = mongoose.model("sneakers", sneakersSchema);

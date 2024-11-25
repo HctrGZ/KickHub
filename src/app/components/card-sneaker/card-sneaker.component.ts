@@ -22,7 +22,10 @@ export class CardSneakerComponent {
     name: '',
     description: '',
     image: '',
-    size: 0
+    sizeRange: [],
+    brandName: '',
+    price: 0,
+    color: ''
   };
 
   visible: boolean = false;
