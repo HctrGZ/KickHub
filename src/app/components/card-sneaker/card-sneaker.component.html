@@ -5,7 +5,7 @@
         alt="imagen" width="350" height="350">
     <button class="btn" (click)="openModal()"> Comprar </button>
     <h2>{{sneaker.name}}</h2>
-    <p>$    {{sneaker.price}}</p>
+    <p>${{sneaker.price}}</p>
 </div>
 
 <!-- Modal -->
@@ -15,21 +15,21 @@
     <span class="close" (click)="closeModal()">&times;</span>
     
     <div class="card flex">
-        <p>
-            <img class="img-item"
-            src="{{sneaker.image}}"
-            alt="imagen" width="350" height="350">
-        </p>
+        <div class="image-column">
+            <img class="img-item" 
+                 src="{{sneaker.image}}" 
+                 alt="imagen" width="350" height="350">
+        </div>
         <p-divider layout="vertical" />
-        <p>
-            {{sneaker.name}}
-            {{sneaker.description}}
-        </p>
-        <p>
-            <button>comprar</button>
-        </p>
-        
+        <div class="description-column">
+            <p><b>{{sneaker.name}}</b></p>
+            <p>{{sneaker.description}}</p>
+        </div>
+        <div class="cart-column">
+            <button (click)="onAddToCart()" class="cartBtn"><i class="pi pi-cart-plus"></i></button>
+        </div>
     </div>
+    
   </div>
 </div>
 

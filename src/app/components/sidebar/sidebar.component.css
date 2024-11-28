@@ -1,0 +1,27 @@
+.header-title{
+    color: #9078B5;
+}
+
+.closeBtn{
+    color: #9078B5;
+    border: 2px solid #9078B5;
+    border-radius: 100%;
+    width: 2rem;
+    height: 2rem;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    transition: ease 100ms !important;
+    color: white !important;
+}
+
+a:hover{
+    color: #9078B5 !important;
+    cursor: pointer;
+}
+
+.all{
+    background-color: #222;
+}

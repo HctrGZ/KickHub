@@ -1,20 +1,19 @@
 <div class="header1" id="titulo">
-    <button class="btnHeader" (click)="sidebarVisible = true">
-        <h4>&#9776; Menú </h4>
-        <p-sidebar [(visible)]="sidebarVisible" [baseZIndex]="100000">
-            <h3>Bienvenido --USERNAME--</h3>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-        </p-sidebar>
-    </button> 
-
-    <a href="#">
-        <h1>KickHub</h1>
-    </a>
-    
-    <button class="btnHeader" onclick="openCar()">
-        <h4>&#9776; Carrito</h4>
+    <!-- Botón que abre el sidebar -->
+    <button class="btnHeader" (click)="isSidebarVisible = true">
+      <h4>&#9776; Menú </h4>
     </button>
-</div>
+  
+    <app-sidebar [(sidebarVisible)]="isSidebarVisible" (sidebarClose)="isSidebarVisible = false"></app-sidebar>
+  
+    <a href="#">
+      <h1>KickHub</h1>
+    </a>
+  
+    <button class="btnHeader" (click)="isSidebarCartVisible = true">
+      <h4>&#9776; Carrito ({{ totalItems }})</h4>
+    </button>
 
+    <app-sidebar-cart [(sidebarVisible)]="isSidebarCartVisible" (sidebarClose)="isSidebarCartVisible = false" [cart]="cart" (cartUpdated)="onCartUpdated($event)"></app-sidebar-cart>
+  </div>
+  

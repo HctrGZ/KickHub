@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, Input  } from '@angular/core';
+import { ChangeDetectorRef, Component, EventEmitter, Input, Output  } from '@angular/core';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { Sneakers } from '../../interfaces/sneakers';
@@ -18,7 +18,7 @@ import { DividerModule } from 'primeng/divider';
 
 export class CardSneakerComponent {
   @Input()
-  public sneaker: Sneakers = {
+  /*   public sneaker: Sneakers = {
     name: '',
     description: '',
     image: '',
@@ -27,6 +27,16 @@ export class CardSneakerComponent {
     price: 0,
     color: ''
   };
+ */
+  @Input() sneaker!: Sneakers; 
+  @Output() addToCart = new EventEmitter<Sneakers>();  // Emite el sneaker seleccionado para el carrito
+
+  onAddToCart() {
+    this.addToCart.emit(this.sneaker);  // Emite el sneaker específico cuando se hace clic en el botón
+  }
+  
+
+
 
   visible: boolean = false;
 

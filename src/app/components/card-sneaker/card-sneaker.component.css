@@ -104,13 +104,45 @@
     text-decoration: none;
     cursor: pointer;
   }
-  
-  /* Clase para hacer visible el modal */
+
   .modal-visible {
-    display: block; /* Muestra el modal */
+    display: block; 
+  }
+
+  
+/* Para el modal */
+  .card.flex {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;            
   }
   
-  .p-sidebar {
-    z-index: 1000 !important; /* Asegúrate de que el sidebar esté sobre otros elementos */
+  .image-column {
+    flex: 1;                        
+    text-align: center;             
   }
   
+  .description-column {
+    flex: 2;                       
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .cart-column {
+    flex: 1;                        
+    display: flex;
+    justify-content: center;
+  }
+
+  .cartBtn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .cartBtn i{
+    font-size: 3rem;
+
+  }
+    

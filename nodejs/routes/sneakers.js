@@ -1,8 +1,11 @@
 const {Router} = require('express');
 const {getAllSneakers, getSneakerById, createNewSneaker, deleteSneakerById, updateSneakerById} = require('../controllers/sneakers');
+const { validateJWT } = require('../middlewares/verifyJWT');
 const router = Router();
 
-router.get("/", getAllSneakers);
+router.get("/"/* , [validateJWT] */, getAllSneakers);
+
+
 router.get("/:id", getSneakerById);
 router.post("/", createNewSneaker); 
 router.delete("/:id", deleteSneakerById);

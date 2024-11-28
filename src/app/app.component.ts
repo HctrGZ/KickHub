@@ -7,7 +7,7 @@ import { CardSneakerComponent } from "./components/card-sneaker/card-sneaker.com
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, HomeComponent, CardSneakerComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

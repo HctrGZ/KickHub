@@ -15,6 +15,7 @@ class Server{
         this.usersPath = "/api/users"
         this.sneakersPath = "/api/sneakers"
         this.authPath = "/api/auth"
+        this.post = "/api/posts"
 
         
         this.middlewares()
@@ -26,6 +27,7 @@ class Server{
         this.app.use(this.sneakersPath, require ("../routes/sneakers"));
         this.app.use(this.usersPath, require ("../routes/users"));
         this.app.use(this.authPath, require ("../routes/auth"));
+        this.app.use(this.post, require ("../routes/post"));
 
         this.app.get("*", function(req, res){
             res.status(404).json({

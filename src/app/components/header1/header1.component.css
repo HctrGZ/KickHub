@@ -54,3 +54,12 @@
     padding: 10px 15px;
     border: none;
   }
+
+  i{
+    font-size: 30px;
+    width: 100px;
+    height: 100px;
+    visibility: visible;
+    z-index: 10;
+  }
+

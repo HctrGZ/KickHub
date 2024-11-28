@@ -1,1 +1,31 @@
-<p>users works!</p>
+
+<div class="management-container">
+    <h1>Gestión de Usuarios</h1>
+    
+    <a class="backBtn" [routerLink]="['/home']"><i class="pi pi-arrow-circle-left"></i></a>
+  
+    <button class="add-button">Agregar Nuevo Usuario</button>
+  
+    <table class="management-table">
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Username</th>
+          <th>Rol</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td><img [src]="'https://via.placeholder.com/50'" alt="Imagen de usuario" /></td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.role }}</td>
+          <td class="acctionBtns">
+            <button class="edit-button">Editar</button>
+            <button class="delete-button">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

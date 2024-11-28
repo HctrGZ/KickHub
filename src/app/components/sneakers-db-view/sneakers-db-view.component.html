@@ -1,1 +1,36 @@
-<p>sneakers-db-view works!</p>
+<!-- sneaker-management.component.html -->
+<div class="management-container">
+    <h1>Gestión de sneaker</h1>
+  
+    <a class="backBtn" [routerLink]="['/home']"><i class="pi pi-arrow-circle-left"></i></a>
+    <button class="add-button">Agregar Nuevo sneaker</button>
+  
+    <table class="management-table">
+
+      <thead>
+        <tr>
+          <th>Imagen</th>
+          <th>Modelo</th>
+          <th>Marca</th>
+          <th>Precio</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+
+
+      <tbody>
+        <tr *ngFor="let sneaker of sneakers">
+          <td><img [src]="sneaker.image || 'https://via.placeholder.com/50'" alt="Imagen del sneaker" /></td>
+          <td>{{ sneaker.name }}</td>
+          <td>{{ sneaker.brandName }}</td>
+          <td>${{ sneaker.price }}</td>
+          <td class="acctionBtns">
+            <button class="edit-button">Editar</button>
+            <button class="delete-button">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+  </div>
+  

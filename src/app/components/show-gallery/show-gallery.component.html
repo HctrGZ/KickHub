@@ -1,11 +1,13 @@
-<app-header1></app-header1>
+<app-header1 [cart]="cart" (cartUpdated)="onCartUpdated($event)"></app-header1>
 
-<div class="h1sneaker"><h1>Sneakers</h1></div>
+<div class="h1sneaker">
+  <h1>Sneakers</h1>
+</div>
 
 
 <div class="container">
-  <!-- <app-card-sneaker *ngFor="let sneaker of sneaker" [sneaker]="sneaker"></app-card-sneaker> -->
-  <app-card-sneaker *ngFor="let sneaker of sneakers" [sneaker]="sneaker"></app-card-sneaker> 
+  <app-card-sneaker *ngFor="let sneaker of sneakers" [sneaker]="sneaker"
+    (addToCart)="onAddToCart($event)"></app-card-sneaker>
 
 </div>
 
