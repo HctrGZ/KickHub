@@ -1,147 +1,148 @@
 html {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-optical-sizing: auto;
-    font-weight: 100px;
-    font-style: normal;
-  }
-  
-  .body_home{
-      margin:0;
-      background-color: #30293B;
-      font-family: "Montserrat", sans-serif;
-  }
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-optical-sizing: auto;
+  font-weight: 100px;
+  font-style: normal;
+}
 
-  h1,h2{
-    font-family: "Permanent Marker", cursive;
-  }
-  
+.body_home {
+  margin: 0;
+  background-color: #30293B;
+  font-family: "Montserrat", sans-serif;
+}
 
-  .carbtn {
-    font-family: "Permanent Marker", cursive;
-    font-size: 20px;
-    cursor: pointer;
-    width: 30rem;
-    background-color: #110b19;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-  }
-
-  .conteiner{
-    margin:0;
-    height: 800px;
-    background-color: black !important; 
-    background-image: url('/images/fondo.jpg');
-    background-position: center;
-    background-size: cover;
-  }
-
-  .conteiner h1{
-    font-size: 70px;
-    margin: 0;
-    padding: 6rem 6rem 1rem;
-  }
-
-  .conteiner p{
-    font-size: 30px;
-    margin: 0;
-    padding: 6rem 6rem;
-    padding-top: 1rem;
-  }
-
-  .button{
-    transition: background-color 0.3s ease ; 
-    font-size: 26px;
-    text-decoration: none;
-    border-width: 2px; 
-    border-style: solid; 
-    background-color: transparent ; 
-    color: rgb(255, 255, 255); 
-    border-radius: 12px; 
-    border-color: rgb(255, 255, 255);
-    margin: 6rem;
-    padding: 10px;
-  }
+h1,
+h2 {
+  font-family: "Permanent Marker", cursive;
+}
 
 
-  .button:hover{
-    background-color: rgb(255, 255, 255) !important;
-    color: #110b19 !important;
-    border-color: #110b19 !important;
-  }
+.carbtn {
+  font-family: "Permanent Marker", cursive;
+  font-size: 20px;
+  cursor: pointer;
+  width: 30rem;
+  background-color: #110b19;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+}
 
-  .button:visited{
-    background-color: transparent !important; 
-    border-color: rgb(255, 255, 255) !important; 
-  }
+.conteiner {
+  margin: 0;
+  height: 800px;
+  background-color: black !important;
+  background-image: url('/images/fondo.jpg');
+  background-position: center;
+  background-size: cover;
+}
 
+.conteiner h1 {
+  font-size: 70px;
+  margin: 0;
+  padding: 6rem 6rem 1rem;
+}
 
-  section{
-    display: flexbox;
-    color: white;
-  }
+.conteiner p {
+  font-size: 30px;
+  margin: 0;
+  padding: 6rem 6rem;
+  padding-top: 1rem;
+}
 
-  .info{
-    display: flex;
-
-  }
-
-  .infotext{
-    font-size: 25px;
-    padding: 6rem;
-    padding-right: 0;
-  }
-
-  .infotext h1{
-    font-size: 50px;
-    padding-bottom: 3rem;
-  }
-
-  .infovid{
-    padding: 6rem;
-    
-  }
-
-  .services{
-    display: flex;
-    margin: 0rem 6rem;
-    justify-content: space-between;
-  }
-
-  #servicesID{
-    color: white;
-    padding: 1rem 6rem 1rem;
-    font-size: 25px;
-  }
-
-  .typeService{
-    color: #ffffff;
-    font-size: 22px;;
-    overflow: hidden;
-    background-color: transparent;
-    margin: 1rem 0;
-    border-radius: 0.7rem;
-    width: 25%;
-    padding-bottom: 4rem;
-  }
+.button {
+  transition: background-color 0.3s ease;
+  font-size: 26px;
+  text-decoration: none;
+  border-width: 2px;
+  border-style: solid;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  border-radius: 12px;
+  border-color: rgb(255, 255, 255);
+  margin: 6rem;
+  padding: 10px;
+}
 
 
-  .last{
-    text-align: center;
-    background-image: url('/images/collage.jpg');
-    color: white;
-    padding: 10rem;
-    margin:0;
-    background-color: black; 
-    background-position: center;
-    background-size: cover;
-    
-  }
+.button:hover {
+  background-color: rgb(255, 255, 255) !important;
+  color: #110b19 !important;
+  border-color: #110b19 !important;
+}
 
-  .last p{
-    padding-bottom: 4rem;
-    font-size: 22px;
-  }
+.button:visited {
+  background-color: transparent !important;
+  border-color: rgb(255, 255, 255) !important;
+}
 
+
+section {
+  display: flexbox;
+  color: white;
+}
+
+.info {
+  display: flex;
+
+}
+
+.infotext {
+  font-size: 25px;
+  padding: 6rem;
+  padding-right: 0;
+}
+
+.infotext h1 {
+  font-size: 50px;
+  padding-bottom: 3rem;
+}
+
+.infovid {
+  padding: 6rem;
+
+}
+
+.services {
+  display: flex;
+  margin: 0rem 6rem;
+  justify-content: space-between;
+}
+
+#servicesID {
+  color: white;
+  padding: 1rem 6rem 1rem;
+  font-size: 25px;
+}
+
+.typeService {
+  color: #ffffff;
+  font-size: 22px;
+  ;
+  overflow: hidden;
+  background-color: transparent;
+  margin: 1rem 0;
+  border-radius: 0.7rem;
+  width: 25%;
+  padding-bottom: 4rem;
+}
+
+
+.last {
+  text-align: center;
+  background-image: url('/images/collage.jpg');
+  color: white;
+  padding: 10rem;
+  margin: 0;
+  background-color: black;
+  background-position: center;
+  background-size: cover;
+
+}
+
+.last p {
+  padding-bottom: 4rem;
+  font-size: 22px;
+}

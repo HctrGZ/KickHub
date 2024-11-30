@@ -1,4 +1,5 @@
 export interface Posts{
+    _id?: string; 
     username: string,
     content: string,
     image: string,

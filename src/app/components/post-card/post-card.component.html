@@ -1,19 +1,43 @@
 <div class="post">
-    <div class="post-header">
+  <div class="post-header">
+    <div class="userConten">
       <div class="user-avatar"></div>
       <div class="user-info">
         <h4>{{post.username}}</h4>
         <p class="post-time">{{post.createdAt}}</p>
       </div>
+
     </div>
-    <div class="post-content">
-      <p class="post-text">{{post.content}}</p>
-      <div class="post-image">
-        <img src="{{post.image}}" alt="Imagen del post">
-      </div>
-    </div>
-    <div class="post-footer">
-      <button class="like-btn">Me gusta</button>
-      <button class="comment-btn">Comentar</button>
+
+    <div class="postBtns">
+      <button *ngIf="isUserPost() && post._id" class="edit-btn" (click)="startEdit(post)"><i
+          class="pi pi-pen-to-square"></i></button>
+      <button *ngIf="isUserPost() && post._id" class="delete-btn " (click)="deletePost(post._id)"><i
+          class="pi pi-trash"></i></button>
     </div>
   </div>
+  <div class="post-content">
+    <p class="post-text">{{post.content}}</p>
+    <div class="post-image">
+      <img src="{{post.image}}" alt="Imagen del post">
+    </div>
+  </div>
+
+</div>
+
+
+<!-- Modal para la edicion -->
+
+<p-dialog class="custom-dialog" header="Editar Post" [modal]="true" [(visible)]="editModalVisible"
+  [style]="{ width: '50vw', height: '30vw'}">
+  <div class="create-post-form">
+    <textarea [(ngModel)]="editedPost.content" placeholder="Escribe el nuevo contenido aquí..."></textarea>
+
+    <input type="file" (change)="onFileSelected($event)" accept="image/*" />
+
+    <div class="flex justify-content-end gap-2">
+      <p-button label="Cancelar" severity="secondary" (click)="closeEditModal()" />
+      <p-button label="Guardar" (click)="updatePost()" />
+    </div>
+  </div>
+</p-dialog>

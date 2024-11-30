@@ -13,6 +13,9 @@ export class AuthService {
   private apiUrl = 'http://localhost:8080/api/auth'; 
 
   constructor(private http: HttpClient, private router: Router) {}
+  getCurrentUser(): string | null {
+    return localStorage.getItem('username');
+  }
 
   login(username: string, password: string): Observable<any> {
     return this.http.post(`${this.apiUrl}/login`, { username, password });
@@ -25,6 +28,7 @@ export class AuthService {
   logout() {
     localStorage.removeItem('token');  
     localStorage.removeItem('username');  
+    localStorage.removeItem('cart');  
     this.router.navigate(['/home']).then(() => {
       window.location.reload();
     });

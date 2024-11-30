@@ -46,29 +46,33 @@ const getSneakerById = async (req = request, res = response) => {
   }
 };
 
-const createNewSneaker = async (req = request, res = response) =>{
+const createNewSneaker = async (req = request, res = response) => {
+    const { brandName, name, description, image, price, color, sizeRange } = req.body;
 
-    const {brandName, name, description, image, price, color, sizeRange} = req.body;
-    const sneakerData = {brandName, name, description, image, price, color, sizeRange};
-
-    if(!brandName || !name || !description || !image || !price || !color || !sizeRange){
+    // Verificar si falta algún campo importante
+    if (!brandName || !name || !description || !image || !price || !color || !sizeRange) {
         return res.status(400).json({
             msg: "Información incompleta"
-        })
+        });
     }
 
-    try{
+    // Crear el objeto de sneaker
+    const sneakerData = { brandName, name, description, image, price, color, sizeRange };
+
+    try {
+        // Guardar el sneaker en la base de datos
         const savedSneaker = await sneakerRepository.create(sneakerData);
-            res.status(201).json(
-                savedSneaker
-            )
-    }catch(error){
-        console.log(500);
+        
+        // Devolver el sneaker guardado
+        res.status(201).json(savedSneaker);
+    } catch (error) {
+        console.error(error); // Para ver los detalles del error
         res.status(500).json({
-            msg: "Error al agregar nuevo elemento"
-        })
+            msg: "Error al agregar sneaker"
+        });
     }
-}
+};
+
 
 const updateSneakerById = async (req = request, res = response) => {
     const { id } = req.params;

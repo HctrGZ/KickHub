@@ -4,7 +4,7 @@ const { validateJWT } = require('../middlewares/verifyJWT');
 const { verifyAdminRole } = require('../middlewares/verifyAdminRole');
 const router = Router();
 
-router.get("/", [validateJWT], getAllSneakers);
+router.get("/", getAllSneakers);
 
 
 router.get("/:id", [validateJWT, verifyAdminRole], getSneakerById);

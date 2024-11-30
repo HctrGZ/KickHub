@@ -60,3 +60,54 @@
 }
 
 
+.create-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  justify-content: space-evenly;
+  height: 100%; /* Asegúrate de que el contenedor ocupe toda la altura disponible */
+}
+
+/* Estilo para los campos de texto */
+.create-post-form input,
+.create-post-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* Estilo para el área de texto para el contenido */
+.create-post-form textarea {
+  height: 8rem;
+  resize: vertical;
+  height: 80%;
+}
+
+/* Estilo para el botón de "Crear" y "Cancelar" */
+.create-post-form .flex {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+/* Estilo para los botones dentro del formulario */
+p-button {
+  min-width: 6rem; /* Botones más grandes */
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+/* Ajuste para la fuente del encabezado del modal */
+p-dialog .p-dialog-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+/* Fondo del modal para darle un toque más profesional */
+p-dialog .p-dialog-content {
+  background-color: #f9f9f9; /* Fondo más suave */
+  padding: 2rem; /* Más padding */
+  border-radius: 8px; /* Bordes redondeados */
+}

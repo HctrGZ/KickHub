@@ -1,13 +1,24 @@
 <app-header1 [cart]="cart" (cartUpdated)="onCartUpdated($event)"></app-header1>
 
-<div class="h1sneaker">
+<div class="header-sneakerview">
   <h1>Sneakers</h1>
-</div>
+  <div class="search-bar">
+    <i class="pi pi-search" style="font-size: 1.5rem"></i>
+    <input
 
+      type="text"
+      placeholder="Buscar sneakers..." 
+      [(ngModel)]="searchQuery"
+      (ngModelChange)="onSearchChange($event)"
+      
+    />
+  </div>
+</div>
 
 <div class="container">
-  <app-card-sneaker *ngFor="let sneaker of sneakers" [sneaker]="sneaker"
-    (addToCart)="onAddToCart($event)"></app-card-sneaker>
-
+  <app-card-sneaker
+    *ngFor="let sneaker of filteredSneakers"
+    [sneaker]="sneaker"
+    (addToCart)="onAddToCart($event)"
+  ></app-card-sneaker>
 </div>
-

@@ -10,6 +10,44 @@ h1, h2{
   font-family: "Permanent Marker", cursive;
 }
 
-.h1sneaker{
-  margin-left: 3rem
+.header-sneakerview {
+  margin: 0.5rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  padding: 1rem;
+}
+
+.header-sneakerview h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333; 
+  margin: 0;
+}
+
+.header-sneakerview input {
+  width: 300px;
+  height: 45px;
+  padding: 0.5rem 1rem; 
+  font-size: 1rem;
+  color: #333;
+  border: 2px solid #717171;
+  border-radius: 5px; 
+  transition: all 0.3s ease;
+}
+
+.header-sneakerview input:focus {
+  outline: none; 
+  border-color: #007bff; 
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+}
+
+.header-sneakerview input::placeholder {
+  color: #aaa; /* Placeholder más elegante */
+}
+
+.search-bar{
+  display: flex;
+  gap: 12px;
+  align-items: center;
 }

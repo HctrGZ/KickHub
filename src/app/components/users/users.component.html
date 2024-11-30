@@ -1,31 +1,66 @@
-
 <div class="management-container">
-    <h1>Gestión de Usuarios</h1>
-    
-    <a class="backBtn" [routerLink]="['/home']"><i class="pi pi-arrow-circle-left"></i></a>
-  
-    <button class="add-button">Agregar Nuevo Usuario</button>
-  
-    <table class="management-table">
-      <thead>
-        <tr>
-          <th>Imagen</th>
-          <th>Username</th>
-          <th>Rol</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let user of users">
-          <td><img [src]="'https://via.placeholder.com/50'" alt="Imagen de usuario" /></td>
-          <td>{{ user.username }}</td>
-          <td>{{ user.role }}</td>
-          <td class="acctionBtns">
-            <button class="edit-button">Editar</button>
-            <button class="delete-button">Eliminar</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
+  <h1>Gestión de Usuarios</h1>
+
+  <a class="backBtn" [routerLink]="['/home']"><i class="pi pi-arrow-circle-left"></i></a>
+
+  <button (click)="showDialog()" class="add-button">Agregar Nuevo Usuario</button>
+
+  <table class="management-table">
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Username</th>
+        <th>Rol</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users">
+        <td><img [src]="'https://via.placeholder.com/50'" alt="Imagen de usuario" /></td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.role }}</td>
+        <td class="acctionBtns">
+          <!-- Botón de Editar -->
+          <button class="edit-button" (click)="startEdit(user)">Editar</button>
+
+          <!-- Botón de Eliminar -->
+          <button class="delete-button" (click)="deleteUser(user._id!)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Modal de Edición -->
+  <p-dialog header="Editar Usuario" [(visible)]="editModalVisible" [modal]="true" [closable]="false"
+    [responsive]="true">
+    <div class="p-grid">
+      <div class="p-col-12">
+        <label for="username">Username</label>
+        <input id="username" [(ngModel)]="editedUser.username" pInputText placeholder="Nuevo username" />
+      </div>
+      <div class="p-col-12">
+        <label for="role">Rol</label>
+        <input id="role" [(ngModel)]="editedUser.role" pInputText placeholder="Nuevo rol" />
+      </div>
+    </div>
+    <p-footer>
+      <button pButton type="button" label="Cancelar" icon="pi pi-times" (click)="closeEditModal()"></button>
+      <button pButton type="button" label="Guardar" icon="pi pi-check" (click)="updateUser()"></button>
+    </p-footer>
+  </p-dialog>
+</div>
+
+
+<!-- Modal para crear user -->
+<p-dialog class="custom-dialog" header="Crear un nuevo post" [modal]="true" [(visible)]="visible"
+  [style]="{ width: '50vw', height: '15vw'}">
+  <div class="create-post-form">
+    <textarea [(ngModel)]="newUser.username" placeholder="Username"></textarea>
+    <textarea [(ngModel)]="newUser.password" placeholder="password"></textarea>
+    <textarea [(ngModel)]="newUser.role" placeholder="Role"></textarea>
+    <div class="flex justify-content-end gap-2">
+      <p-button label="Cancelar" severity="secondary" (click)="cancelPost()" />
+      <p-button label="Crear" (click)="createUser()" (click)="cancelPost()" />
+    </div>
   </div>
-  
+</p-dialog>

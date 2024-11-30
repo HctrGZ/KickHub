@@ -1,5 +1,6 @@
 export interface Sneakers {
-    quantity: any;
+    quantity: number;
+    _id?: string,
     brandName: string;   
     name: string;         
     description: string;  

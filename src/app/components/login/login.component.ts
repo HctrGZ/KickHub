@@ -16,17 +16,18 @@ export class LoginComponent {
   password: string = '';
   errorMessage: string | null = null;
 
-  // Register variables
+
   newUsername: string = '';
   newPassword: string = '';
   registrationError: string = '';
 
   isFlipped: boolean = false; 
-  // Alterna entre login y register
   flipForm() {
-    this.isFlipped = !this.isFlipped;
+    setTimeout(() => {
+      this.isFlipped = !this.isFlipped;
+    }, 10); 
   }
-
+  
   constructor(private authService: AuthService, private router: Router) {}
 
   onSubmit() {

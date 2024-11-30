@@ -18,6 +18,8 @@ export class PostService {
     return localStorage.getItem('token');  // Devuelve el token o null si no está presente
   }
 
+  
+
   public fetchPosts(){
     const token = this.getToken();
     console.log(token, "ola");
@@ -39,22 +41,82 @@ export class PostService {
   public get posts(){
     return this._post;
   }
-/* 
-  public ordenarPorAbecedario() {
-    this._post.sort((a, b) => {
-      return a.name.localeCompare(b.name);
+
+
+  public createPost(newPost: Posts) {
+    const token = this.getToken();
+    if (!token) {
+      console.log("No token found.");
+      return;
+    }
+  
+    this.http.post<Posts>(this.apiUrl, newPost, {
+      headers: {
+        "Authorization": `${token}`,
+        "Content-Type": "application/json"
+      }
+    }).subscribe({
+      next: (response) => {
+        console.log("Post created:", response);
+        // Si quieres agregar el nuevo post a tu lista de posts:
+        this._post.push(response);
+      },
+      error: (error) => {
+        console.log("Error creating post:", error);
+      }
     });
-  } */
-
-
-  /* public deleteElement(name: string): void {
-    this._post = this._post.filter((sneaker) => sneaker.name != name);
-    //console.log("Evento desde el padre");
   }
 
-  public createElement(sneaker: Posts): void {
-    console.log('Evento desde el padre');
-    this._post.push(sneaker);
-  } */
+  public updatePost(id: string, updatedPost: Partial<Posts>) {
+    const token = this.getToken();
+    if (!token) {
+      console.log("No token found.");
+      return;
+    }
+
+    this.http.put<Posts>(`${this.apiUrl}/${id}`, updatedPost, {
+      headers: {
+        "Authorization": `${token}`,
+        "Content-Type": "application/json"
+      }
+    }).subscribe({
+      next: (response) => {
+        console.log("Post updated:", response);
+        const index = this._post.findIndex(post => post._id === id); // Usamos '_id' aquí
+        if (index !== -1) {
+          this._post[index] = response; // Actualizar el post en la lista
+        }
+        this.fetchPosts();
+      },
+      error: (error) => {
+        console.log("Error updating post:", error);
+      }
+    });
+  }
+  
+  public deletePost(id: string) {
+    const token = this.getToken();
+    if (!token) {
+      console.log("No token found.");
+      return;
+    }
+
+    this.http.delete(`${this.apiUrl}/${id}`, {
+      headers: {
+        "Authorization": `${token}`,
+        "Content-Type": "application/json"
+      }
+    }).subscribe({
+      next: () => {
+        console.log("Post deleted:", id);
+        this._post = this._post.filter(post => post._id !== id); // Usamos '_id' aquí
+      },
+      error: (error) => {
+        console.log("Error deleting post:", error);
+      }
+    });
+  }
+  
+  
 
 }

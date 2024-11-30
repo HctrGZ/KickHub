@@ -1,36 +1,139 @@
 <!-- sneaker-management.component.html -->
 <div class="management-container">
-    <h1>Gestión de sneaker</h1>
-  
-    <a class="backBtn" [routerLink]="['/home']"><i class="pi pi-arrow-circle-left"></i></a>
-    <button class="add-button">Agregar Nuevo sneaker</button>
-  
-    <table class="management-table">
+  <h1>Gestión de sneaker</h1>
 
-      <thead>
-        <tr>
-          <th>Imagen</th>
-          <th>Modelo</th>
-          <th>Marca</th>
-          <th>Precio</th>
-          <th>Acciones</th>
-        </tr>
-      </thead>
+  <a class="backBtn" [routerLink]="['/home']"><i class="pi pi-arrow-circle-left"></i></a>
+  <button (click)="createModalVisible = true" class="add-button">Agregar Nuevo sneaker</button>
+
+  <table class="management-table">
+
+    <thead>
+      <tr>
+        <th>Imagen</th>
+        <th>Modelo</th>
+        <th>Marca</th>
+        <th>Precio</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
 
 
-      <tbody>
-        <tr *ngFor="let sneaker of sneakers">
-          <td><img [src]="sneaker.image || 'https://via.placeholder.com/50'" alt="Imagen del sneaker" /></td>
-          <td>{{ sneaker.name }}</td>
-          <td>{{ sneaker.brandName }}</td>
-          <td>${{ sneaker.price }}</td>
-          <td class="acctionBtns">
-            <button class="edit-button">Editar</button>
-            <button class="delete-button">Eliminar</button>
-          </td>
-        </tr>
-      </tbody>
+    <tbody>
+      <tr *ngFor="let sneaker of sneakers">
+        <td><img [src]="sneaker.image || 'https://via.placeholder.com/50'" alt="Imagen del sneaker" /></td>
+        <td>{{ sneaker.name }}</td>
+        <td>{{ sneaker.brandName }}</td>
+        <td>${{ sneaker.price }}</td>
+        <td class="acctionBtns">
+          <button (click)="openEditModal(sneaker)" class="edit-button">Editar</button>
+          <button (click)="deleteSneaker(sneaker._id!)" class="delete-button">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
 
-    </table>
+  </table>
+</div>
+
+
+<!-- Modal de Edición de Sneaker -->
+<p-dialog header="Editar Sneaker" [(visible)]="editModalVisible" [modal]="true" [closable]="false" [responsive]="true"
+  [style]="{width: '50vw'}" [contentStyle]="{padding: '2rem'}">
+  <div class="p-grid">
+    <div class="p-col-12">
+      <label for="name" class="label">Nombre</label>
+      <input id="name" [(ngModel)]="editedSneaker.name" pInputText placeholder="Nuevo nombre del sneaker"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
+    <div class="p-col-12">
+      <label for="brandName" class="label">Marca</label>
+      <input id="brandName" [(ngModel)]="editedSneaker.brandName" pInputText placeholder="Nueva marca"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
+    <div class="p-col-12">
+      <label for="price" class="label">Precio</label>
+      <input id="price" [(ngModel)]="editedSneaker.price" pInputText placeholder="Nuevo precio" type="number"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
+    <div class="p-col-12">
+      <label for="description" class="label">Descripción</label>
+      <input id="description" [(ngModel)]="editedSneaker.description" pInputText placeholder="Nueva descripción"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
+    <div class="p-col-12">
+      <label for="color" class="label">Color</label>
+      <input id="color" [(ngModel)]="editedSneaker.color" pInputText placeholder="Nuevo color"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
+    <div class="p-col-12">
+      <label for="quantity" class="label">Cantidad</label>
+      <input id="quantity" [(ngModel)]="editedSneaker.quantity" pInputText placeholder="Nueva cantidad" type="number"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
+    <div class="p-col-12">
+      <label for="sizeRange" class="label">Tamaño (Rango)</label>
+      <input id="sizeRange" [(ngModel)]="editedSneaker.sizeRange" pInputText placeholder="Tamaño de rango"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
   </div>
-  
+  <p-footer style="display: flex; justify-content: flex-end; gap: 1rem;">
+    <button pButton type="button" label="Cancelar" icon="pi pi-times" class="p-button-outlined p-button-secondary"
+      (click)="closeEditModal()"></button>
+    <button pButton type="button" label="Guardar" icon="pi pi-check" class="p-button-primary"
+      (click)="updateSneaker()"></button>
+  </p-footer>
+</p-dialog>
+
+
+
+<p-dialog header="Crear un nuevo Sneaker" [modal]="true" [(visible)]="createModalVisible"
+  [style]="{ width: '50vw', height: 'auto' }" [contentStyle]="{ padding: '2rem' }">
+  <div class="create-sneaker-form">
+    <div class="p-field">
+      <label for="newName" class="label">Nombre</label>
+      <input id="newName" [(ngModel)]="newSneaker.name" pInputText placeholder="Nombre del sneaker"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
+
+    <div class="p-field">
+      <label for="newBrandName" class="label">Marca</label>
+      <input id="newBrandName" [(ngModel)]="newSneaker.brandName" pInputText placeholder="Marca del sneaker"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
+
+    <div class="p-field">
+      <label for="newPrice" class="label">Precio</label>
+      <input id="newPrice" [(ngModel)]="newSneaker.price" pInputText placeholder="Precio" type="number"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
+
+    <div class="p-field">
+      <label for="newDescription" class="label">Descripción</label>
+      <input id="newDescription" [(ngModel)]="newSneaker.description" pInputText placeholder="Descripción"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
+
+    <div class="p-field">
+      <label for="newColor" class="label">Color</label>
+      <input id="newColor" [(ngModel)]="newSneaker.color" pInputText placeholder="Color"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
+
+    <div class="p-field">
+      <label for="newSizeRange" class="label">Tamaño (Rango)</label>
+      <input id="newSizeRange" [(ngModel)]="newSneaker.sizeRange" pInputText placeholder="Rango de tamaños"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
+
+    <div class="p-field">
+      <label for="newImage" class="label">Imagen</label>
+      <input type="file" id="newImage" (change)="onFileSelected($event)" accept="image/*"
+        class="p-inputtext p-component p-fluid input-field" />
+    </div>
+
+    <div class="flex justify-content-end gap-2" style="margin-top: 2rem;">
+      <p-button label="Cancelar" severity="secondary" (click)="cancelCreateSneaker()"
+        class="p-button-outlined p-button-secondary" />
+      <p-button label="Crear" (click)="createSneaker()" class="p-button-primary" />
+    </div>
+  </div>
+</p-dialog>

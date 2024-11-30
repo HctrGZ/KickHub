@@ -7,7 +7,7 @@ const router = Router();
 router.get("/",[validateJWT],  getAllPost);
 
 router.get("/:id",[validateJWT], getPostById);
-router.post("/", [validateJWT] , createNewPost); 
+router.post("/" ,[validateJWT], createNewPost); 
 router.delete("/:id", [validateJWT] , deletePostById);
 router.put("/:id", [validateJWT] , updatePostById);
 

@@ -2,6 +2,7 @@ const {response, request} = require('express')
 const sneakerSch = require("../models/sneakers");
 const { postRepository } = require('../repositories/post');
 const { ObjectId } = require('mongoose').Types;
+const jwt = require("jsonwebtoken")
 
 
 
@@ -123,7 +124,6 @@ const deletePostById = async (req = request, res = response) => {
             msg: "ID no válido"
         });
     }
-
     try {
         const deletedPost = await postRepository.deleteById(id);
 
@@ -132,7 +132,6 @@ const deletePostById = async (req = request, res = response) => {
                 msg: "Post no encontrado"
             });
         }
-
         return res.status(200).json({
             msg: "Post eliminado exitosamente"
         });

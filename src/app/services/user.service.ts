@@ -39,4 +39,76 @@ export class UserService {
     return this._user;
   }
 
+  public createUser(newUser: Users) {
+    const token = this.getToken();
+    if (!token) {
+      console.log("No token found.");
+      return;
+    }
+  
+    this.http.post<Users>(this.apiUrl, newUser, {
+      headers: {
+        "Authorization": `${token}`,
+        "Content-Type": "application/json"
+      }
+    }).subscribe({
+      next: (response) => {
+        console.log("User created:", response);
+        this._user.push(response);
+      },
+      error: (error) => {
+        console.log("Error creating post:", error);
+      }
+    });
+  }
+
+  public updateUser(id: string, updatedUser: Partial<Users>) {
+    const token = this.getToken();
+    if (!token) {
+      console.log("No token found.");
+      return;
+    }
+
+    this.http.put<Users>(`${this.apiUrl}/${id}`, updatedUser, {
+      headers: {
+        "Authorization": `${token}`,
+        "Content-Type": "application/json"
+      }
+    }).subscribe({
+      next: (response) => {
+        console.log("User updated:", response);
+        const index = this._user.findIndex(user => user._id === id); 
+        if (index !== -1) {
+          this._user[index] = response; 
+        }
+      },
+      error: (error) => {
+        console.log("Error updating user:", error);
+      }
+    });
+  }
+  
+  public deleteUser(id: string) {
+    const token = this.getToken();
+    if (!token) {
+      console.log("No token found.");
+      return;
+    }
+
+    this.http.delete(`${this.apiUrl}/${id}`, {
+      headers: {
+        "Authorization": `${token}`,
+        "Content-Type": "application/json"
+      }
+    }).subscribe({
+      next: () => {
+        console.log("User deleted:", id);
+        this._user = this._user.filter(post => post._id !== id);
+      },
+      error: (error) => {
+        console.log("Error deleting user:", error);
+      }
+    });
+  }
+
 }

@@ -1,6 +1,5 @@
 <div class="card flex justify-content-center">
-    <p-sidebar #sidebarRef [(visible)]="sidebarVisible"
-    (onHide)="closeSidebar()">
+    <p-sidebar #sidebarRef [(visible)]="sidebarVisible" (onHide)="closeSidebar()">
         <ng-template pTemplate="headless">
             <div class="flex flex-column h-full all">
 
@@ -14,37 +13,45 @@
                     </span>
                 </div>
 
-                
+
                 <div class="overflow-y-auto">
                     <ul class="list-none p-3 m-0">
                         <li>
                             <ul class="list-none p-0 m-0 overflow-hidden">
                                 <li>
-                                    <a [routerLink]="['/home']" pRipple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+                                    <a [routerLink]="['/home']" pRipple
+                                        class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                                         <i class="pi pi-home mr-3"></i>
                                         <span class="font-medium">Inicio</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a *ngIf="isUser() || isAdmin()" [routerLink]="['/posts']"  pRipple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+                                    <a *ngIf="isUser() || isAdmin()" [routerLink]="['/posts']" pRipple
+                                        class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                                         <i class="pi pi-file-edit mr-3"></i>
                                         <span class="font-medium">Posts</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a [routerLink]="['/gallery']"  pRipple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
-                                        <i class="pi mr-2"><img style="height: 1.5rem; width: 1.2rem; margin-right: 0.2rem;" src="/images/iconoSneaker.png"></i>
+                                    <a [routerLink]="['/gallery']" pRipple
+                                        class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+                                        <i class="pi mr-2"><img
+                                                style="height: 1.5rem; width: 1.2rem; margin-right: 0.2rem;"
+                                                src="/images/iconoSneaker.png"></i>
                                         <span class="font-medium">Sneakers</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a *ngIf="isAdmin()" [routerLink]="['/users']" routerLinkActive="router-link-active"  pRipple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+                                    <a *ngIf="isAdmin()" [routerLink]="['/users']" routerLinkActive="router-link-active"
+                                        pRipple
+                                        class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                                         <i class="pi pi-user-edit mr-3"></i>
                                         <span class="font-medium">Users</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a *ngIf="isAdmin()" [routerLink]="['/sneakersDB']"  pRipple class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+                                    <a *ngIf="isAdmin()" [routerLink]="['/sneakersDB']" pRipple
+                                        class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                                         <i class="pi pi-cog mr-3"></i>
                                         <span class="font-medium">DataBaseSneakers</span>
                                     </a>
@@ -53,30 +60,30 @@
                             </ul>
                         </li>
                     </ul>
-                    
+
                 </div>
 
 
-                
+
 
                 <div class="mt-auto">
                     <!-- Botón de Cerrar Sesión -->
                     <a *ngIf="loggedInUser" (click)="onLogout()" pRipple
-                        class="flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
+                        class="m-3 flex align-items-center cursor-pointer p-3 border-round text-700 hover:surface-100 transition-duration-150 transition-colors p-ripple">
                         <i class="pi pi-sign-out mr-3"></i>
                         <span class="font-medium">Cerrar Sesión</span>
                     </a>
-                
-                    <!-- Separador -->
+
+
                     <hr class="mb-3 mx-3 border-top-1 border-none surface-border" />
-                
-                    <div  *ngIf="loggedInUser"
-                        class="m-3 flex align-items-center cursor-pointer p-3 gap-2 border-round text-700 hover:surface-100 transition-duration-150 transition-colors">
-                        <p-avatar *ngIf="loggedInUser" image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+
+                    <div *ngIf="loggedInUser" class="m-3 flex align-items-center p-3 gap-2 border-round text-700 ">
+                        <p-avatar *ngIf="loggedInUser"
+                            image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
                             shape="circle"></p-avatar>
                         <span class="font-bold">
                             <div>
-                                <p>Bienvenido, {{ loggedInUser }}!</p>
+                                <p style="color: white;">Bienvenido, {{ loggedInUser }}!</p>
                             </div>
                         </span>
                     </div>
@@ -92,4 +99,4 @@
             </div>
         </ng-template>
     </p-sidebar>
-    </div>
+</div>

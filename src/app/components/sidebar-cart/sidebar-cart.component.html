@@ -3,7 +3,7 @@
     [style]="{ width: '500px', height: '100%' }">
     <ng-template pTemplate="headless">
       <div class="flex flex-column h-full all">
-        <!-- Header -->
+
         <div class="flex align-items-center justify-content-between px-4 pt-3 flex-shrink-0">
           <span class="inline-flex align-items-center gap-2">
             <h2 class="cart-title">Tu Carrito</h2>
@@ -19,7 +19,7 @@
             No hay productos en el carrito.
           </div>
 
-          <!-- Lista de productos en el carrito -->
+
           <ul *ngIf="cart.length > 0" class="cart-items">
             <li *ngFor="let sneaker of cart" class="cart-item">
               <div class="item-details">
@@ -34,13 +34,13 @@
             </li>
           </ul>
 
-          <!-- Total -->
+
           <div *ngIf="cart.length > 0" class="total">
-            <button class="pay-btn">
-              <i class="pi pi-credit-card"></i> 
+            <button class="pay-btn" (click)="onPay()">
+              <i class="pi pi-credit-card"></i>
               Pagar
             </button>
-            
+
             <p><strong>Total: </strong>${{ getTotalPrice() }}</p>
           </div>
         </div>

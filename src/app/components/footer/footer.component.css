@@ -8,7 +8,7 @@ footer section{
     float: right;
 }
 
-footer p{ /* quitar margen extra de p */
+footer p{ 
     margin: 0;
 }
 

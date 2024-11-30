@@ -1,84 +1,183 @@
+.post {
+  width: 900px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
 
-  .post {
-    width: 900px;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    overflow: hidden;
-  }
-  
+.userConten {
+  display: flex;
+  padding: 15px;
+  color: white;
+  gap: 15px;
+}
 
-  .post-header {
-    display: flex;
-    padding: 15px;
-    background-color: #9078B5;
-    color: white;
-    align-items: center;
-    gap: 15px;
-  }
-  
-  .user-avatar {
-    width: 40px;
-    height: 40px;
-    background-color: #222;
-    border-radius: 50%;
-  }
-  
-  .user-info h4 {
-    margin: 0;
-    font-size: 16px;
-    font-weight: bold;
-  }
-  
-  .post-time {
-    font-size: 12px;
-    color: #ccc;
-  }
-  
+.postBtns {
+  float: right;
+  display: flex;
+  align-items: end;
+  gap: 20px;
+}
 
-  .post-content {
-    padding: 20px;
-  }
-  
-  .post-text {
-    font-size: 14px;
-    color: #222;
-    line-height: 1.5;
-  }
-  
-  /* Imagen del post */
-  .post-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-top: 15px;
-  }
-  
-  /* Footer del post (botones de interacción) */
-  .post-footer {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #f5f5f5;
-    border-top: 1px solid #ddd;
-  }
-  
-  button {
-    background-color: #110b19;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #9078B5;
-  }
-  
-  /* Estilo de los botones específicos */
-  .like-btn, .comment-btn {
-    font-size: 14px;
-  }
-  
+
+.post-header {
+  display: flex;
+  padding: 15px;
+  background-color: #9078B5;
+  color: white;
+  align-items: center;
+  gap: 500px;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: #222;
+  border-radius: 50%;
+}
+
+.user-info h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.post-time {
+  font-size: 12px;
+  color: #ccc;
+}
+
+
+.post-content {
+  padding: 20px;
+}
+
+.post-text {
+  font-size: 14px;
+  color: #222;
+  line-height: 1.5;
+}
+
+/* Imagen del post */
+.post-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+/* Footer del post (botones de interacción) */
+.post-footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #f5f5f5;
+  border-top: 1px solid #ddd;
+}
+
+button {
+  background-color: #110b19;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #9078B5;
+}
+
+/* Estilo de los botones específicos */
+.like-btn,
+.comment-btn {
+  font-size: 14px;
+}
+
+.postBtns button:hover {
+  background-color: #696969;
+}
+
+
+
+.custom-dialog {
+  --dialog-padding: 2rem;
+  --dialog-border-radius: 10px;
+  --dialog-background: #ffffff;
+  --dialog-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.create-post-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #dcdcdc;
+  border-radius: 5px;
+  resize: none;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s;
+}
+
+textarea:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0px 0px 5px rgba(0, 123, 255, 0.5);
+}
+
+
+input[type="file"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+
+.flex {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+p-button {
+  font-size: 1rem;
+  padding: 0.5rem 1.2rem;
+}
+
+p-button[label="Cancelar"] {
+  --button-background-color: #f5f5f5;
+  --button-text-color: #333333;
+  --button-hover-background-color: #e0e0e0;
+  --button-hover-text-color: #000000;
+}
+
+p-button[label="Guardar"] {
+  --button-background-color: #007bff;
+  --button-text-color: #ffffff;
+  --button-hover-background-color: #0056b3;
+  --button-hover-text-color: #ffffff;
+}
+
+
+.p-dialog-content {
+  padding: var(--dialog-padding);
+  background: var(--dialog-background);
+  border-radius: var(--dialog-border-radius);
+  box-shadow: var(--dialog-shadow);
+}
+
+
+.p-dialog-titlebar {
+  background: #007bff;
+  color: white;
+  font-size: 1.2rem;
+  border-radius: var(--dialog-border-radius) var(--dialog-border-radius) 0 0;
+}
