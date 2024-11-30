@@ -14,8 +14,18 @@ export class PostService {
   private apiUrl = "http://localhost:8080/api/posts"
   private _post: Posts[] = [];
 
+  private getToken(): string | null {
+    return localStorage.getItem('token');  // Devuelve el token o null si no está presente
+  }
+
   public fetchPosts(){
-    this.http.get<Posts[]>(this.apiUrl).subscribe({
+    const token = this.getToken();
+    console.log(token, "ola");
+    this.http.get<Posts[]>(this.apiUrl, {
+      headers: {
+        "Authorization": `${token}`
+      }
+    }).subscribe({
       next: (response) => {
         console.log(response);
         this._post = response;

@@ -19,7 +19,7 @@ const validateJWT = async (req = request, res = response, next) => {
                 msg: "Token inválido"
             });
         } else {
-            // Aquí ya llamas a `next()` para continuar al siguiente middleware
+            req.userActive = user;
             next();
         }
     } catch (error) {

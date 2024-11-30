@@ -14,8 +14,17 @@ export class SneakerServiceService {
   private apiUrl = "http://localhost:8080/api/sneakers"
   private _sneakers: Sneakers[] = [];
 
+  private getToken(): string | null {
+    return localStorage.getItem('token');  // Devuelve el token o null si no está presente
+  }
+
   public fetchSneakers(){
-    this.http.get<Sneakers[]>(this.apiUrl).subscribe({
+    const token = this.getToken();
+    this.http.get<Sneakers[]>(this.apiUrl,  {
+      headers: {
+        "Authorization": `${token}`
+      }
+    }).subscribe({
       next: (response) => {
         console.log(response);
         this._sneakers = response;

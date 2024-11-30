@@ -1,16 +1,28 @@
 <div class="all">
-   <!--  <header class="titulo">
-        <h1>KickHub</h1>
-    </header> -->
-    <section class="container">
-        <form action="" method="POST" class="form">
-            <h2>Iniciar sesión</h2>
-            <input type="text" name="user" placeholder="Usuario">
-            <input type="password" name="pass" placeholder="Contraseña">
-            <button type="submit" class="btn">Ingresar</button>
-            <div class="message">
-                <p>¿No tienes cuenta? <a href="#">Regístrate</a></p>
-            </div>
-        </form>
+    <section class="container" [ngClass]="{'flip': isFlipped}">
+      <form (ngSubmit)="onSubmit()" class="form" [ngClass]="{'flipped': isFlipped}">
+        <h2>Iniciar sesión</h2>
+        <input type="text" name="user" placeholder="Usuario" [(ngModel)]="username" required />
+        <input type="password" name="pass" placeholder="Contraseña" [(ngModel)]="password" required />
+        <button type="submit" class="btn">Ingresar</button>
+        <div class="message" *ngIf="errorMessage">
+          <p style="color: red;">{{ errorMessage }}</p>
+        </div>
+        <div class="message">
+          <p>¿No tienes cuenta? <a  (click)="flipForm()">Regístrate</a></p>
+        </div>
+      </form>
+      <!-- Formulario de Registro, no se elimina, solo se voltea -->
+      <form class="form" [ngClass]="{'flipped': !isFlipped}">
+        <h2>Registrarse</h2>
+        <input type="text" name="user" placeholder="Usuario" [(ngModel)]="newUsername" required />
+        <input type="password" name="pass" placeholder="Contraseña" [(ngModel)]="newPassword" required />
+        <button type="submit" (click)="onRegister()" class="btn">Registrar</button>
+        <div class="message">
+        <p *ngIf="registrationError" class="error-message">{{ registrationError }}</p>
+          <p>¿Ya tienes cuenta? <a (click)="flipForm()">Inicia sesión</a></p>
+        </div>
+      </form>
     </section>
-</div>
+  </div>
+  

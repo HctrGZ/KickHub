@@ -4,12 +4,11 @@ const { validateJWT } = require('../middlewares/verifyJWT');
 const { getAllPost, getPostById, createNewPost, deletePostById, updatePostById } = require('../controllers/posts');
 const router = Router();
 
-router.get("/", getAllPost);
+router.get("/",[validateJWT],  getAllPost);
 
-
-router.get("/:id", getPostById);
-router.post("/", createNewPost); 
-router.delete("/:id", deletePostById);
-router.put("/:id", updatePostById);
+router.get("/:id",[validateJWT], getPostById);
+router.post("/", [validateJWT] , createNewPost); 
+router.delete("/:id", [validateJWT] , deletePostById);
+router.put("/:id", [validateJWT] , updatePostById);
 
 module.exports = router;

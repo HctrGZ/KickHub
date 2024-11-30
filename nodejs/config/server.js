@@ -9,7 +9,8 @@ class Server{
         this.corsOptions = {
             origin: [
                 process.env.FRONTEND_URL
-            ]
+            ],
+            allowedHeaders: ['Content-Type', 'Authorization']
         }
 
         this.usersPath = "/api/users"

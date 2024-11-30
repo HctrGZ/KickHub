@@ -38,8 +38,7 @@ const getPostById = async (req = request, res = response) => {
   }
 };
 
-const jwt = require("jsonwebtoken"); // Asegúrate de tener este paquete instalado
-const user = require('../models/user');
+
 
 const createNewPost = async (req = request, res = response) => {
     const token = req.header("Authorization")?.replace("Bearer ", "");

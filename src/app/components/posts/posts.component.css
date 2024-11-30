@@ -12,20 +12,7 @@
   background-color: #cbcbcb;
 }
 
-.addPostBtn{
-  width: 200px;
-  height: 50px;
-  margin: 30px;
-  border: none;
-  margin-left: 180px;
-  background-color: #30293B;
-  border: 2px solid black;
-  cursor: pointer;
-  float: inline-start;
-  color: #ffffff;
-  font-size: 24px;
-  transition: background-color 0.3s;
-}
+
 
 .btnContainer{
   align-items: center;
@@ -37,3 +24,39 @@
   background-color: white;
   color: black;
 }
+
+.create-post-btn {
+  display: flex;
+  margin-top: 40px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px; 
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 14px 22px;
+  border: none;
+  border-radius: 30px;  
+  cursor: pointer;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  margin-left: 180px;
+  background-color: #30293B;
+  float: inline-start;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.create-post-btn i {
+  font-size: 22px; 
+}
+
+.create-post-btn:hover {
+  background-color: #453855; 
+  transform: translateY(-2px);
+}
+
+.create-post-btn:active {
+  background-color: #3B2F47; 
+  transform: translateY(1px);
+}
+
+

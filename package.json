@@ -19,6 +19,7 @@
     "@angular/platform-browser-dynamic": "^18.2.12",
     "@angular/router": "^18.2.12",
     "bulma": "^1.0.2",
+    "jwt-decode": "^3.1.2",
     "primeflex": "^3.3.1",
     "primeicons": "^7.0.0",
     "primeng": "^17.18.12",

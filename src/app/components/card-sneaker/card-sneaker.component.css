@@ -53,6 +53,7 @@
 
 .img-item{
     padding: 1rem;
+    object-fit: cover;
 }
 
 .ola{
@@ -144,5 +145,10 @@
   .cartBtn i{
     font-size: 3rem;
 
+  }
+
+  .carTextNoUser{
+    margin: 30px;
+    text-align: center;
   }
     

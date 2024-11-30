@@ -4,50 +4,53 @@ const { Validations } = require('../helpers/validations.js');
 const bcrypt = require("bcrypt");
 const { generateJWT } = require('../helpers/jdwt.js');
 
-const login = async (req = request, res = response) =>{
-    const {username, password} = req.body;
-    if(!username || !password){
+
+const login = async (req = request, res = response) => {
+    const { username, password } = req.body;
+
+    // Validar que los datos del cuerpo sean correctos
+    if (!username || !password) {
         return res.status(400).json({
-            msg: "Datos Invalidos"
-        })
+            msg: "Datos inválidos"
+        });
     }
 
-    const user = await UserRepository.getOne({username: username }) //Solo se compara el usuario
-    if(!user){
+    // Buscar el usuario por el nombre de usuario
+    const user = await UserRepository.getOne({ username: username });
+    if (!user) {
         return res.status(401).json({
-            msg:"Usuario y/o contraseña inválidos"
-        })
+            msg: "Usuario y/o contraseña inválidos"
+        });
     }
 
-    /* Parte de la "Desencriptación" */
-
-    const validPassword = await bcrypt.compare(password, user.password); //se compara la contraseña dada por la que el usuario tiene
-    if(!validPassword){
+    // Comparar la contraseña proporcionada con la almacenada
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) {
         return res.status(401).json({
-            msg:"Usuario y/o contraseña inválidos"
-        }) 
+            msg: "Usuario y/o contraseña inválidos"
+        });
     }
-    
-    /* Parte del token */
-    try{
-        const { password: _, ...simpleUser} = user.toObject();
-        const token = await generateJWT(username);
+
+    // Generación del JWT
+    try {
+        // Excluimos la contraseña antes de enviarla
+        const { password: _, ...simpleUser } = user.toObject();
+        const token = await generateJWT(username, simpleUser.role);
+
+        // Responder con el token y los datos del usuario (sin la contraseña)
         return res.status(200).json({
-            msj: "Login OK",
+            msg: "Login OK",
             token: token,
             user: simpleUser
-        })
-    }catch(error){
+        });
+    } catch (error) {
         console.log(error);
         return res.status(500).json({
             msg: "Internal Error"
-        })
+        });
     }
+};
 
-    res.status(200).json({
-        msg: "login Ok"
-    })
-}
 
 const register = async (req = request, res = response) =>{
     const {username, password} = req.body;
