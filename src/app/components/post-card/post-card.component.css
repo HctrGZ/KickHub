@@ -181,3 +181,15 @@ p-button[label="Guardar"] {
   font-size: 1.2rem;
   border-radius: var(--dialog-border-radius) var(--dialog-border-radius) 0 0;
 }
+
+@media (max-width: 768px){
+  .post {
+    width: 600px;
+    height: auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+  }
+  
+}

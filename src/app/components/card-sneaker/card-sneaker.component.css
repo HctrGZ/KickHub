@@ -156,3 +156,40 @@
     text-align: center;
   }
     
+  @media (max-width: 768px){
+    .tenisBox {
+      width: 100%;
+      height: auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+    }
+
+    .img-item{
+      padding: 1rem;
+      object-fit: cover;
+      width: 100% !important;
+      height: 100% !important;
+  }
+    
+  }
+
+  @media (max-width:1400px){
+    .tenisBox {
+      width: 100%;
+      height: auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+    }
+
+    .img-item{
+      padding: 1rem;
+      object-fit: cover;
+      width: 100% !important;
+      height: 100% !important;
+  }
+    
+  }

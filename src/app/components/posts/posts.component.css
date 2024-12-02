@@ -111,3 +111,23 @@ p-dialog .p-dialog-content {
   padding: 2rem; /* Más padding */
   border-radius: 8px; /* Bordes redondeados */
 }
+
+@media (max-width: 768px){
+  .all {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 50px;
+      padding: 20px 0;
+    }
+
+  .header-sneakerview{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .create-post-btn{
+    margin: 0;
+  }
+}

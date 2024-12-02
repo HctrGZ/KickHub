@@ -8,7 +8,6 @@
   background-color: #110b19;
   color: white;
   padding: 0.1rem;
-  /* Medidas relativas dependiento del tamaño de la fuente html */
   margin: 0;
   z-index: 1;
 }
@@ -62,4 +61,28 @@ i {
   height: 100px;
   visibility: visible;
   z-index: 10;
+}
+
+@media (max-width: 768px) {
+  .header1 h1 {
+    display: none; /* Oculta el texto */
+  }
+  
+  .header1 a::after {
+    content: ''; 
+    display: inline-block;
+    background-image: url('/images/mainIcon.png'); 
+    background-size: contain; 
+    background-repeat: no-repeat;
+    width: 50px; 
+    height: 50px; 
+    filter: invert(1); 
+    margin-top: 3rem;
+  }
+
+  .header1 h4{
+    font-size: 16px;
+  }
+  
+
 }
