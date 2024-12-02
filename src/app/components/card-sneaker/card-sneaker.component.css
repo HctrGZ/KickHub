@@ -144,7 +144,11 @@
 
   .cartBtn i{
     font-size: 3rem;
+    transition: color ease 300ms;
+  }
 
+  .cartBtn:hover{
+    color: #7c6a9a;
   }
 
   .carTextNoUser{

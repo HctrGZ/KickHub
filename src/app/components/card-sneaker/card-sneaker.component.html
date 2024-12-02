@@ -26,7 +26,7 @@
             <p>{{sneaker.description}}</p>
         </div>
         <div *ngIf="isUser()" class="cart-column">
-            <button (click)="onAddToCart()" class="cartBtn"><i class="pi pi-cart-plus"></i></button>
+            <button (click)="onAddToCart()" class="cartBtn"><i class="pi pi-cart-plus "></i></button>
         </div>
         <div *ngIf="!isUser()" class="cart-column">
             <p class="carTextNoUser"><b>Ingresa para agregar productos a tu carrito!!!</b></p>

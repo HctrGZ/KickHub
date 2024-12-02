@@ -17,7 +17,7 @@ import { InputTextModule } from 'primeng/inputtext';
     FormsModule,
     DialogModule,
     ButtonModule,
-    InputTextModule,
+    InputTextModule, NgIf
   ],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css',
